@@ -1,0 +1,132 @@
+.explosion {
+  display none
+  position fixed
+  top 0
+  left 0
+  right 0
+  bottom 0
+  z-index 999
+  opacity 0
+  min-width 1023px
+  min-height 600px
+  width 100vw
+  min-height 100vh
+  color white
+  background-color rgba(32, 32, 32, 1)
+  backdrop-filter blur(14px)
+  &_Opened {
+    display block
+  }
+  &_Opening {
+    display block
+    .explosionImage {
+      transition none  
+    }
+  }
+  &Controls {
+    position absolute 
+    top 0
+    right 22%
+    z-index 7
+    display flex
+    flex-direction column
+    justify-content center
+    width 3rem
+    height 400px
+    margin-top 1500px
+    transition margin 0.7s
+  }
+  &Close {
+    position absolute
+    top 0
+    width 3rem
+    height 3rem
+    background-image url("/libs/explosion/images/close.svg")
+    background-repeat no-repeat
+    background-position center
+    transform scale(1)
+    transition transform 0.3s;
+    &:hover {
+      transform scale(1.25)
+    }
+  }
+  &Navs {
+    display flex 
+    flex-direction column
+    align-items center 
+  }
+  &Nav {
+    width 3rem
+    height 3rem
+    border-radius 50%
+    border 3px solid white
+    background-color transparent
+    background-repeat no-repeat
+    background-position center
+    opacity 1
+    transform scale(1)
+    transition background-color 0.3s, opacity 0.3s, transform 0.3s
+    &Prev {
+      background-image url("/libs/explosion/images/arrow-up-white.svg")
+    }
+    &Next {
+      background-image url("/libs/explosion/images/arrow-down-white.svg")
+    }
+    &:hover {
+      background-color #0d7068
+      transform scale(1.25)
+    }
+    &:disabled {
+      pointer-events none
+      opacity 0.3  
+    }
+  }
+  &Counter {
+    font-size 1.2rem
+    font-weight bold
+    padding 1rem 0  
+  }
+  &Image {
+    position absolute
+    z-index 2
+    display block
+    width 500px
+    height auto
+    object-fit cover
+    backface-visibility hidden
+    transform-origin 50% 50%
+    border-radius 8px
+    border 4px solid #0d7068
+    transform translate3d(0,0,0) scale(1)
+    transition transform 0.7s, opacity 0.7s
+    box-shadow 2px 2px 16px rgb(0, 0, 0,  0.3)
+  }
+  &Summary {
+    position absolute
+    left 0
+    bottom 0
+    z-index 8
+    overflow hidden
+    width 0%
+    color white
+    background-color #0d7068
+    transition width 0.7s
+    border-top-right-radius 8px
+    box-shadow 2px 2px 16px rgb(0, 0, 0,  0.3)
+    border: 2px solid #8a8a8a
+    &Content {
+      opacity 1
+      white-space nowrap
+      padding 1rem 3rem
+      transition opacity 0.3s
+    }
+  }
+  &Title {
+    font-size 2em
+    text-transform uppercase
+    letter-spacing 0.1em
+  }
+  &Description {
+    color #daa35b  
+  }
+}
