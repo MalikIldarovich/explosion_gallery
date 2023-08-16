@@ -26,7 +26,7 @@
   },
   "scripts": {
     "start": "gulp dev",
-    "build": "NODE_ENV=production gulp build",
+    "build": "gulp build",
     "clean": "gulp clean",
     "server": "gulp server"
   }
